@@ -14,10 +14,10 @@ pipeline {
                 // Define the Python environment (you may need to install Python and necessary packages)
                 sh 'python3 -m venv venv'
                 sh 'source venv/bin/activate'
-                sh 'pip install -r requirements.txt' // If you have requirements for your Python script
+                //sh 'pip install -r requirements.txt' // If you have requirements for your Python script
                 
                 // Run your Python script
-                sh 'python your_script.py'
+                sh 'test.py'
             }
         }
     }
