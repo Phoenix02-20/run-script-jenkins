@@ -1,14 +1,7 @@
 pipeline {
     agent any
     
-    stages {
-        stage('Checkout') {
-            steps {
-                // Checkout your source code repository (e.g., Git)
-                checkout scm
-            }
-        }
-        
+    stages {    
         stage('Build and Run Python Script') {
             steps {
                 // Define the Python environment (you may need to install Python and necessary packages)
