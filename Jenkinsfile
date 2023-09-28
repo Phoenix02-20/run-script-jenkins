@@ -1,17 +1,11 @@
-pipeline {
-    agent any
-    
-    stages {    
-        stage('Build and Run Python Script') {
-            steps {
-                // Define the Python environment (you may need to install Python and necessary packages)
-                sh 'python3 -m venv venv'
-                sh 'source venv/bin/activate'
-                //sh 'pip install -r requirements.txt' // If you have requirements for your Python script
-                
-                // Run your Python script
-                sh 'test.py'
-            }
+stage('Debug') {
+    steps {
+        script {
+            sh 'ls -l /var/lib/jenkins/workspace/script_master'  // Check workspace permissions
+            sh 'whoami'  // Check current user
+            sh 'id'  // Display user and group information
+            checkout scm
+            sh 'ls -l /var/lib/jenkins/workspace/script_master'  // Check workspace permissions again
         }
     }
 }
