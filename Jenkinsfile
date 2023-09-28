@@ -1,11 +1,15 @@
 pipeline {
     agent any
+    options {
+        skipDefaultCheckout(true)
+    }
     
     stages {
-        stage('Checkout') {
+        stage('Debug') {
             steps {
-                // Checkout your source code repository (e.g., Git)
-                checkout scm
+                script {
+                    sh 'git ls-remote -h https://github.com/Phoenix02-20/run-script-jenkins.git HEAD'
+                }
             }
         }
         
@@ -22,4 +26,3 @@ pipeline {
         }
     }
 }
-
