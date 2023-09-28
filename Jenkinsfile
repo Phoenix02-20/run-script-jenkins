@@ -21,14 +21,5 @@ pipeline {
             }
         }
     }
-    
-    post {
-        success {
-            // Do something if the build is successful
-        }
-        failure {
-            // Do something if the build fails
-        }
-    }
 }
 
