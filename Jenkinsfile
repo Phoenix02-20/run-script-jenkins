@@ -14,7 +14,7 @@ pipeline {
                 sh 'python3 -m venv venv'
                 sh 'source venv/bin/activate'
                 // Run your Python script
-                sh 'test.py'
+                sh 'python test.py'
             }
         }
     }
